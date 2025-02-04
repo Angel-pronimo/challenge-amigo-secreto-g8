@@ -39,9 +39,18 @@ function mostrarListaDeAmigos() {
     });
 }
 
+// Función para validar que haya al menos 2 amigos en la lista
+function validarMinimoAmigos() {
+    if (amigos.length < 2) {
+        alert("Debe haber al menos dos amigos en la lista para sortear.");
+        return false;
+    }
+    return true;
+}
+
 // Función para sortear un amigo secreto
 function sortearAmigo() {
-    if (!validarListaVacia()) {
+    if (!validarListaVacia() || !validarMinimoAmigos()) {
         return;
     }
     // Generar un número aleatorio
