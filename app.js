@@ -33,10 +33,23 @@ function agregarAmigo() {
 function mostrarListaDeAmigos() {
     let lista = document.getElementById("listaAmigos");
     lista.innerHTML = "";
-    //bucle para mostrar la lista de amigos
-    amigos.forEach(nombre => {
-        lista.innerHTML += `<li>${nombre}</li>`;    
+    // bucle para mostrar la lista de amigos con boton de modificación
+    amigos.forEach((nombre, index) => {
+        lista.innerHTML += `<li>${nombre} <button onclick="modificarAmigo(${index})">Modificar</button></li>`;    
     });
+}
+
+// Función para modificar un amigo en la lista
+function modificarAmigo(index) {
+    // Solicitar el nuevo nombre
+    let nuevoNombre = prompt("Ingrese el nuevo nombre:", amigos[index]);
+    //Verifica si el nuevo nombre es válido y no está duplicado
+    if (nuevoNombre && nuevoNombre.trim() !== "" && !amigos.includes(nuevoNombre.trim())) {
+        amigos[index] = nuevoNombre.trim();
+        mostrarListaDeAmigos();
+    } else {
+        alert("Nombre inválido o ya existente.");
+    }
 }
 
 // Función para validar que haya al menos 2 amigos en la lista
@@ -51,7 +64,7 @@ function validarMinimoAmigos() {
 // Función para aplicar animación shake a la imagen
 function aplicarShake() {
     let imagen = document.querySelector("img");
-    //agrergar la clase shake
+    //agrergar la clase shake(css)
     imagen.classList.add("shake");
 }
 
@@ -59,7 +72,8 @@ function aplicarShake() {
 function resetShake() {
     let imagen = document.querySelector("img");
     imagen.classList.remove("shake");
-    void imagen.offsetWidth; // Trigger reflow to restart the animation
+    void imagen.offsetWidth; 
+    //volver a agregar la clase shake(css)
     imagen.classList.add("shake");
 } 
 
