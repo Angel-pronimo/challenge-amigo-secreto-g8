@@ -20,10 +20,22 @@ function agregarAmigo() {
     let nombre = document.getElementById("amigo").value;
     amigos.push(nombre);
     console.log(amigos);
+    // Mostrar la lista de amigos
+    mostrarListaDeAmigos();    
     // Limpiar la caja de texto
     limpiarcaja();    
     return;
     }
+}
+
+// Función para mostrar la lista de amigos
+function mostrarListaDeAmigos() {
+    let lista = document.getElementById("listaAmigos");
+    lista.innerHTML = "";
+    //bucle para mostrar la lista de amigos
+    amigos.forEach(nombre => {
+        lista.innerHTML += `<li>${nombre}</li>`;    
+    });
 }
 
     // Función para limpiar la caja de texto
