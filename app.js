@@ -12,6 +12,7 @@ function validarEntrada() {
     return true;
 }
 
+
 // Función para agregar un amigo a la lista
 function agregarAmigo() {
     // Validar que el casillero no esté vacío
@@ -36,6 +37,30 @@ function mostrarListaDeAmigos() {
     amigos.forEach(nombre => {
         lista.innerHTML += `<li>${nombre}</li>`;    
     });
+}
+
+// Función para sortear un amigo secreto
+function sortearAmigo() { 
+    if (!validarListaVacia()) {
+        return;
+    }    
+    // Generar un número aleatorio
+    let amigoSecreto = Math.floor(Math.random() * amigos.length);
+    // Borrar la lista de amigos
+    let lista = document.getElementById("listaAmigos");
+    lista.innerHTML = "";
+    // Mostrar el amigo secreto
+    let resultado = document.getElementById("resultado");
+    resultado.innerHTML = `El amigo secreto es: ${amigos[amigoSecreto]}`;  
+}
+
+// Función para validar que la lista no esté vacía
+function validarListaVacia() {
+    if (amigos.length === 0) {
+        alert("La lista de amigos está vacía. Por favor, agregue amigos antes de sortear.");
+        return false;
+    }
+    return true;
 }
 
     // Función para limpiar la caja de texto
