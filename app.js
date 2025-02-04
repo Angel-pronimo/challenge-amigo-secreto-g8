@@ -63,12 +63,21 @@ function sortearAmigo() {
     resultado.innerHTML = `El amigo secreto es: ${amigos[amigoSecreto]}`;
     // Deshabilitar el botón de sorteo
     document.getElementById("botonSortear").disabled = true;
-    // Reiniciar el juego después de mostrar el resultado
+    // Reiniciar el juego después de mostrar el resultado despues de 5seg
     setTimeout(() => {
         // Rehabilitar el botón de sorteo
         document.getElementById("botonSortear").disabled = false;
+        // Reiniciar el juego
+        reiniciarJuego();
 }, 5000);
     return;    
+}
+
+// Función para reiniciar el juego
+function reiniciarJuego() {
+    amigos = [];
+    mostrarListaDeAmigos();
+    document.getElementById("resultado").innerHTML = "";    
 }
 
 // Función para validar que la lista no esté vacía
