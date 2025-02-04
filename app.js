@@ -10,6 +10,7 @@ function validarEntrada() {
         return false;
     }
     return true;
+}
 
 // Función para agregar un amigo a la lista
 function agregarAmigo() {
@@ -18,6 +19,15 @@ function agregarAmigo() {
     // Agregar una lista de amigos
     let nombre = document.getElementById("amigo").value;
     amigos.push(nombre);
-    console.log(amigos);    
+    console.log(amigos);
+    // Limpiar la caja de texto
+    limpiarcaja();    
     return;
     }
+}
+
+    // Función para limpiar la caja de texto
+function limpiarcaja() {
+    // Limpiar el contenido de la caja de texto
+    document.getElementById("amigo").value = "";
+}
