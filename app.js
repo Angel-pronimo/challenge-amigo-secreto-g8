@@ -48,8 +48,26 @@ function validarMinimoAmigos() {
     return true;
 }
 
+// Función para aplicar animación shake a la imagen
+function aplicarShake() {
+    let imagen = document.querySelector("img");
+    //agrergar la clase shake
+    imagen.classList.add("shake");
+}
+
+// Función para resetear el efecto shake
+function resetShake() {
+    let imagen = document.querySelector("img");
+    imagen.classList.remove("shake");
+    void imagen.offsetWidth; // Trigger reflow to restart the animation
+    imagen.classList.add("shake");
+} 
+
 // Función para sortear un amigo secreto
 function sortearAmigo() {
+    // Llamar a la función shake(amima la imagen)
+    aplicarShake();
+    // Validar que la lista no esté vacía y que haya al menos dos amigos
     if (!validarListaVacia() || !validarMinimoAmigos()) {
         return;
     }
@@ -63,13 +81,14 @@ function sortearAmigo() {
     resultado.innerHTML = `El amigo secreto es: ${amigos[amigoSecreto]}`;
     // Deshabilitar el botón de sorteo
     document.getElementById("botonSortear").disabled = true;
-    // Reiniciar el juego después de mostrar el resultado despues de 5seg
+    // Reiniciar el juego después de mostrar el resultado despues de 3seg
     setTimeout(() => {
         // Rehabilitar el botón de sorteo
         document.getElementById("botonSortear").disabled = false;
         // Reiniciar el juego
         reiniciarJuego();
-}, 5000);
+}, 3000);
+    resetShake();
     return;    
 }
 
