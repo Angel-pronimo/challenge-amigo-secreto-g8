@@ -40,10 +40,10 @@ function mostrarListaDeAmigos() {
 }
 
 // Función para sortear un amigo secreto
-function sortearAmigo() { 
+function sortearAmigo() {
     if (!validarListaVacia()) {
         return;
-    }    
+    }
     // Generar un número aleatorio
     let amigoSecreto = Math.floor(Math.random() * amigos.length);
     // Borrar la lista de amigos
@@ -51,7 +51,15 @@ function sortearAmigo() {
     lista.innerHTML = "";
     // Mostrar el amigo secreto
     let resultado = document.getElementById("resultado");
-    resultado.innerHTML = `El amigo secreto es: ${amigos[amigoSecreto]}`;  
+    resultado.innerHTML = `El amigo secreto es: ${amigos[amigoSecreto]}`;
+    // Deshabilitar el botón de sorteo
+    document.getElementById("botonSortear").disabled = true;
+    // Reiniciar el juego después de mostrar el resultado
+    setTimeout(() => {
+        // Rehabilitar el botón de sorteo
+        document.getElementById("botonSortear").disabled = false;
+}, 5000);
+    return;    
 }
 
 // Función para validar que la lista no esté vacía
