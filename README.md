@@ -12,6 +12,7 @@ al uso de esta herramienta.
 1. Inicia la aplicación:
     -Abriendo el archivo index.html en tu navegador de preferencia.
 2. Accede al enlace proporcionado.
+     https://angel-pronimo.github.io/challenge-amigo-secreto-g8/
 
 ## Uso
 
