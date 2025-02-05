@@ -1,12 +1,26 @@
 # Challenge Amigo Secreto
 
-Este proyecto es una aplicación para sortear un amigo secreto. Organiza, ingresa y sortea los nombres de tus amigos de esta forma te ahorraras .
+Este proyecto es una aplicación para sortear un amigo secreto. Organiza, 
+ingresa y sortea los nombres de tus amigos, de esta forma podrás delegar 
+la complicada tarea de elegir entre tus amigos a un afortunado, gracias 
+al uso de esta herramienta.
 
-## Uso
+## Forma de ejecutar
 
 1. Inicia la aplicación:
     -Abriendo el archivo index.html en tu navegador de preferencia.
-2. Accede al enlacer proporcionado.
+2. Accede al enlace proporcionado.
+
+## Uso
+
+1. Ingresa los nombres de tus amigos
+    -ingresa uno a uno los nombres de tus amigos, luego apreta el boton "añadir".
+    
+    ![](/assets/addamigo.png)
+
+    Si lo has hecho de forma correcta veras el nombre de tus amigos añadirse en una lista visible.  
+        *Atencion!!
+2. 
 
 
 ## Licencia
